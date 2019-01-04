@@ -14,6 +14,7 @@ void readDIR(const char *dir_name, vector<string> &filename_v){
           // ignores sub-directories
           if( folder_info.st_mode & S_IFREG ){
             filename_v.push_back(path);
+            cout << path << endl;
           }
         }
       }

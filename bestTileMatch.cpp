@@ -1,5 +1,6 @@
 int* bestTileMatch(vector<tile> main_tile_averages, vector<tile> sub_tile_averages){
   int *best_match = new int[main_tile_averages.size()];
+  int best_match_index;
   int distance = INT_MAX;
 
   for (int i = 0; i < main_tile_averages.size(); i++) {
@@ -9,8 +10,9 @@ int* bestTileMatch(vector<tile> main_tile_averages, vector<tile> sub_tile_averag
       int blue_diff = main_tile_averages[i].average[2]-sub_tile_averages[j].average[2];
       int new_distance = sqrt(pow(red_diff,2)+pow(green_diff,2)+pow(blue_diff,2));
 
+
       if (new_distance < distance){
-        int best_match_index = j;
+        best_match_index = j;
         distance = new_distance;
       }
     }
